@@ -1,8 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="/usr/local/Cellar/git/2.10.0/bin/:$PATH"
+
+# git path settings
+export PATH="/usr/local/share/zsh/site-functions:$PATH"
+
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/lioliolio/.oh-my-zsh
+export ZSH=/Users/taewoo/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -74,7 +77,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -84,18 +87,28 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# locale settings
+export LC_ALL=""
+export LANG="en_US.UTF-8"
+export LC_COLLATE="C"
+
+# ncurses settings
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
+
+# pyenv settings
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# pyenv-virtualenv settings
 eval "$(pyenv virtualenv-init -)"
+
+# autoenv settings
 source ~/.autoenv/activate.sh
 
-export NVM_DIR="/Users/lioliolio/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# gettext path settings
+export PATH="/usr/local/opt/gettext/bin:$PATH"
 
-export LC_ALL=en_US.UTF-8  
-export LANG=en_US.UTF-8
-
-# Selenium geckodriver path
-export PATH=$PATH:/Users/lioliolio/.webdriver/geckodriver
+# zsh-systax-highlighting settings
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

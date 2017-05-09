@@ -29,7 +29,14 @@ Plugin 'The-NERD-Tree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nanotech/jellybeans.vim'
-Plugin 'shougo/neocomplcache.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'othree/html5.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'rking/ag.vim'
+Plugin 'wakatime/vim-wakatime'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'hail2u/vim-css3-syntax'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -63,7 +70,9 @@ set ts=4
 set shiftwidth=4
 set expandtab
 syntax on
+colorscheme desert
 let g:solarized_termcolors=256
+set conceallevel=1
 
 " NERDTree settings
 let NERDTreeShowHidden=1
@@ -78,5 +87,17 @@ nmap <C-L> <C-W>l
 let g:airline_theme="dark"
 let g:airline_powerline_fonts = 1
 
-" neocomplcache settings
-let g:neocomplcache_enable_at_startup = 1
+" Javascript Plugin settings
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+
+" indentline settings
+let g:indentLine_enabled = 1
+let g:indentLine_color_term = 239
+let g:indentLine_char = 'c'
+let g:indentLine_conceallevel=1
+
+" 명령 모드에서 영문 키보드로 자동 전환
+if has('unix') && filereadable('/usr/local/lib/libInputSourceSwitcher.dylib')
+    autocmd InsertLeave * call libcall('/usr/local/lib/libInputSourceSwitcher.dylib', 'Xkb_Switch_setXkbLayout', 'com.apple.keylayout.ABC')
+endif
